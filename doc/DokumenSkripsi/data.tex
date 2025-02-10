@@ -49,6 +49,13 @@
 \usepackage{verbatim} 		%multiline comment
 \usepackage{pgfplots}
 \usepackage{enumitem}
+\usepackage{xspace}
+\usepackage{commath}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{listings}
+\usepackage{pdflscape}
+\usepackage{amsmath}
 %\overfullrule=3mm % memperlihatkan overfull 
 %=============================================================================
 
@@ -80,7 +87,7 @@
 %\mode{sidangakhir} 	% untuk sidang 2 / sidang pada Skripsi 2(IF)
 %\mode{final} 			% untuk mencetak buku skripsi 
 %=============================================================================
-\mode{final}
+\mode{bimbingan}
 
 %_____________________________________________________________________________
 %=============================================================================
@@ -177,7 +184,7 @@
 % seterusnya, harus dilakukan secara manual dengan mengubah file skripsi.tex
 % Catatan: bagian ini hanya bisa diatur di mode bimbingan
 %=============================================================================
-\lampiran{all}
+\lampiran{none}
 %=============================================================================
 
 %_____________________________________________________________________________
@@ -202,9 +209,9 @@
 % !!Lihat singkatan pembimbing dan penguji anda di file dosen.tex!!
 % Petunjuk: hilangkan tanda << & >>, dan isi sesuai dengan data anda
 %=============================================================================
-\namanpm{<<Nama Lengkap>>}{<<10 digit NPM UNPAR>>}
+\namanpm{Alfonsus Oktario Sutomo}{6181801010}
 \tanggal{<<tanggal>>}{<<bulan>>}{<<tahun>>}         %isi bulan dengan angka
-\pembimbing{<<pembimbing utama/1>>}{<<pembimbing pendamping/2>>}    
+\pembimbing{\PAN}{<<pembimbing pendamping/2>>}    
 \penguji{<<penguji 1>>}{<<penguji 2>>} 
 %=============================================================================
 
@@ -293,10 +300,10 @@
 %=============================================================================
 %\ttd{digital}
 %\ttd{gambar}
-%\ttd{materai}
+%\ttd{meterai}
 %\ttd{kosong}
 %=============================================================================
-\ttd{gambar}
+\ttd{meterai}
 
 %_____________________________________________________________________________
 %=============================================================================
@@ -336,4 +343,5 @@
 \renewcommand{\vtemplateauthor}{lionov}
 \pgfplotsset{compat=newest}
 \setlist{nosep}
+\newcommand{\web}{\textit{web}\xspace}
 %=============================================================================

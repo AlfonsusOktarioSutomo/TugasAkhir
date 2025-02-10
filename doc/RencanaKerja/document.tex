@@ -8,10 +8,15 @@
 \pagestyle{myheadings}
 \usepackage{etoolbox}
 \usepackage{setspace} 
+\usepackage[dvipsnames]{xcolor}
 \usepackage{lipsum} 
+\usepackage{xspace}
+\usepackage{hyperref}
 \setlength{\headsep}{30pt}
 \usepackage[inner=2cm,outer=2.5cm,top=2.5cm,bottom=2cm]{geometry} %margin
 % \pagestyle{empty}
+
+\hypersetup{colorlinks=true,urlcolor=SkyBlue,linkcolor=MidnightBlue}
 
 \makeatletter
 \renewcommand{\@maketitle} {\begin{center} {\LARGE \textbf{ \textsc{\@title}} \par} \bigskip {\large \textbf{\textsc{\@author}} }\end{center} }
@@ -19,6 +24,7 @@
 \markright{\textbf{\textsc{AIF184001/AIF184002 \textemdash Rencana Kerja Tugas Akhir \textemdash Sem. Genap 2024/2025}}}
 
 \newcommand{\HRule}{\rule{\linewidth}{0.4mm}}
+\newcommand{\web}{\textit{web}\xspace}
 \renewcommand{\baselinestretch}{1}
 \setlength{\parindent}{0 pt}
 \setlength{\parskip}{6 pt}
@@ -35,7 +41,7 @@
 	\newcommand{\@npm}{6181801010}
 	\newcommand{\@judultopik}{Perkembangan Penggunaan Teknologi Pembangunan Web Dunia} % Judul/topik anda
 	\newcommand{\jumpemb}{1} % Jumlah pembimbing, 1 atau 2
-	\newcommand{\tanggal}{19/01/2025}
+	\newcommand{\tanggal}{19/02/2025}
 	
 	% Dokumen hasil template ini harus dicetak bolak-balik !!!!
 	
@@ -44,69 +50,79 @@
 	\pagenumbering{arabic}
 	
 	\section{Deskripsi}
-	Tuliskan deskripsi dari topik tugas akhir yang akan anda ajukan. Di sini dapat dituliskan latar belakang, seperti apa penelitian yang sudah ada sebelumnya dan apa yang akan anda kerjakan. Sertakan gambar agar penjelasan anda menjadi lebih baik.
-	
-	Pada tugas akhir ini, akan dibuat sebuah perangkat lunak yang dapat menampilkan visualisasi dan simulasi kerumunan orang yang berkunjung ke sebuah museum. Dengan menggunakan perangkat lunak tersebut, pengelola museum dapat mengatur tempat peletakan objek sehingga tidak terjadi kerumunan yang terlalu padat.
-	
-	Dari berbagai macam teknik yang dapat digunakan untuk melakukan simulasi kerumunan, dipilih dua buah teknik yaitu teknik {\it flow tiles} dan {\it social force model (steering behaviour)}.
-	
-	Dst, dst, dst, \ldots\ldots\ldots 
-	
-	Perangkat lunak akan dibuat dengan bantuan {\it framework} OpenSteer. Sebagai studi kasus, museum yang digunakan untuk melakukan simulasi adalah Museum Geologi Bandung.
-	
-	Dst, dst, dst, \ldots\ldots\ldots 
+	Internet merupakan jaringan yang menghubungkan berbagai macam perangkat yang memungkinkan pertukaran informasi secara cepat. Pertukaran informasi di internet diatur oleh sebuah protokol. Protokol tersebut adalah TCP/IP(\textit{Transmission Control Protocol/Internet Protocol}). Informasi yang diberikan oleh penyedia informasi tentunya harus mudah dimengerti oleh orang yang mengakses informasi tersebut. Informasi yang mudah dimengerti tidak hanya dalam bentuk tulisan, namun bisa juga berupa gambar, video, atau suara. Kebutuhan inilah yang menyebabkan munculnya layanan \web yang berjalan di atas internet.
+
+    Layanan \web(\textit{World Wide Web}) memiliki protokol HTTP(\textit{HyperText Transfer Protocol}) sebagai aturan dalam pertukaran informasi yang dilakukan. Layanan \web ini dibangun dengan menggunakan berbagai teknologi yang ada, dalam perkembangannya banyak bermunculan pihak ketiga yang memberikan layanan berupa teknologi untuk membuat halaman web dari segi \textit{front end} maupun dari segi \textit{back end}, beberapa contoh dari teknologi tersebut adalah PHP, JavaScript, dan MySQL. Perkembangan teknologi ini kemudian dicatat oleh sebuah situs bernama \textit{HTTP Archive}.
+
+    Situs \web \textit{HTTP archive} ini mencatat perkembangan teknologi yang dipakai dalam membuat \web. Situs ini mencatat perkembangan penggunaan teknologi berdasarkan beberapa kriteria seperti pengalaman pengguna dalam menggunakan \web, kecepatan sebuah \web dalam memuat informasi, dan tingkat aksesibilitas sebuah \web. Dalam penelitian ini aspek yang akan diamati dari perkembangan teknologi pembuatan \web adalah CrUX(\textit{Chrome User Experience}). Aspek ini mengukur tingkat interaktif dan lamanya sebuah \web dalam memuat informasi berdasarkan pengalaman nyata pengguna Chrome dengan kondisi yang bervariasi. 
+
+    Data yang telah didapatkan dari situs \web \textit{HTTP archive} ini disimpan ke dalam sebuah layanan penyimpanan data berbasis \textit{cloud} yang dikembangkan oleh Google yaitu \textit{Google Big Query}. Layanan ini memungkinkan penggunanya untuk memproses data dengan menggunakan \textit{query SQL}. SQL sendiri merupakan bahasa pemrograman untuk mengelola \textit{big data}. SQL juga memiliki fungsi untuk menyimpan, mengubah, menghapus, dan mengambil data dalam sistem manajemen basis data.
+
+        \begin{figure}[]
+        \centering
+        \includegraphics[width=0.5\linewidth]{Gambar/contoh linechart.jpg}
+        \caption{Contoh \textit{line chart}}
+        \label{fig:contohlinechart}
+    \end{figure}
+
+    Data perkembangan ini kemudian disajikan dalam bentuk visualisasi agar lebih mudah dimengerti. Salah satu bentuk visualisasi yang dapat digunakan untuk menjelaskan perkembangan ini adalah \textit{line chart}. Contoh \textit{line chart} dapat dilihat pada gambar~\ref{fig:contohlinechart}\footnote{Gambar didapatkan dari \url{https://www.simonsezit.com/article/how-to-make-a-line-graph-in-excel/}}. Visualisasi ini dapat memperlihatkan perkembangan secara jelas dengan rentang waktu yang lebih lebar. Hal ini berguna karena data yang digunakan adalah data dari 60 bulan terakhir atau data dari bulan oktober 2018 hingga bulan desember 2024.
 	
 	\section{Rumusan Masalah}
-	Tuliskan rumusan dari masalah yang akan anda bahas pada tugas akhir ini. Rumusan masalah biasanya berupa kalimat pertanyaan. Gunakan penomoran untuk menuliskan rumusan masalah ini.
+	Rumusan masalah yang akan diselesaikan dalam penelitian ini adalah:
+    \begin{enumerate}
+        \item Bagaimana perkembangan teknologi pembuatan \web selama 60 bulan terakhir?
+        \item Bagaimana pekembangan teknologi pembuatan \web yang banyak digunakan oleh pembuat \web?
+        \item Bagaimana cara menyajikan pekembangan teknologi pembuatan \web kepada pengguna?
+    \end{enumerate}
 	
 	\section{Tujuan}
-	Tuliskan tujuan dari topik tugas akhir yang anda ajukan. Tujuan penelitian biasanya berkaitan erat dengan pertanyaan yang diajukan di bagian rumusan masalah. Gunakan penomoran untuk menuliskan rumusan masalah ini, di mana tiap nomor berkaitan dengan nomor pada rumusan masalah.
+	Tujuan dari penelitian ini adalah:
+    \begin{enumerate}
+        \item Mengetahui perkembangan teknologi pembuatan \web selama 60 bulan terakhir.
+        \item Mengetahui perkembangan teknologi pembuatan \web yang banyak digunakan oleh pembuat \web.
+        \item Membuat perangkat lunak untuk menyajikan perkembangan teknologi pembuatan \web.
+    \end{enumerate}
 	
 	\section{Deskripsi Perangkat Lunak}
-	Tuliskan deksripsi dari perangkat lunak yang akan anda hasilkan. Apa saja fitur yang disediakan oleh PL tersebut dan apa saja kemampuan dari PL tersebut. Perhatikan contoh di bawah ini:
-	
 	Perangkat lunak akhir yang akan dibuat memiliki fitur minimal sebagai berikut:
 	\begin{itemize}
-		\item Pengguna dapat melihat denah Musem Geologi Bandung dalam bidang dua dimensi. Sedangkan pengunjung direpresentasikan menggunakan lingkaran-lingkaran kecil (tidak menggunakan gambar manusia yang diambil dari atas)
-		\item Pengguna dapat memunculkan atau menghilangkan gambar {\it flow tiles} pada denah museum. 
-		\item Pengguna dapat mengatur jalannya simulasi: memulai(start) simulasi, menunda(pause) simulasi, melanjutkan(continue) simulasi, maupun menghentikan(stop) simulasi
-		\item Pengguna dapat mengatur banyaknya pengunjung di dalam museum, baik melalui perubahan frekuensi kedatangan pengunjung maupun menambahkan dan menghapus pengunjung satu-persatu secara manual.
-		\item Posisi kamera dapat diubah (pergerakan di bidang tiga dimensi) sehingga pengguna dapat melihat simulasi di museum dari berbagai arah. 
-		\item Posisi kamera dapat diubah untuk emngikuti perjalanan seorang pengunjung di dalam 
-		\item Pengguna dapat memilih apakah akan menggunakan teknik {\it flow tiles} atau tidak pada saat simulasi berlangsung
-		\item Jenis {\it flow tiles} yang digunakan dapat diubah-ubah pada saat simulasi sedang berlangsung
-		
+		\item Pengguna dapat melihat hasil perkembangan penggunaan teknologi pembuatan \web
+		\item Pengguna dapat menentukan teknologi yang ingin dilihat  
+		\item Pengguna dapat mengatur rentang waktu data yang ingin dilihat
+		\item Pengguna dapat mengatur jenis data yang ingin dilihat dapat berdasarkan jumlah atau persentase dari teknologi yang digunakan
 	\end{itemize}
 	
 	\section{Detail Pengerjaan Tugas Akhir}
-	Tuliskan bagian-bagian pengerjaan skripsi secara detail. Bagian pekerjaan tersebut mencakup awal hingga akhir skripsi, termasuk di dalamnya pengerjaan dokumentasi skripsi, pengujian, survei, dll.
-	
 	Bagian-bagian pekerjaan skripsi ini adalah sebagai berikut :
 	\begin{enumerate}
-		\item Melakukan survei ke Museum Geologi Bandung untuk mendapatkan denah serta mengetahui perilaku pengunjung museum secara umum (arah perjalanan, kecepatan, lama melihat objek, dll)
-		\item Melakukan analisis pada hasil survei terhadap pergerakan pengunjung di museum dan membuat rancangan denah di komputer yang dilengkapi dengan penghalang dan objek di museum.
-		\item Melakukan studi literatur mengenai sifat kolektif suatu kerumunan, teknik {\it social force model} dan teknik {\it flow tiles}
-		\item Mempelajari bahasa pemrograman C++ dan cara menggunakan framework OpenSteer
-		\item Merancang pergerakan kerumunan di dalam museum menggunakan teknik {\it social force model} dan {\it flow tiles} serta menggunakan teknik lainnya seperti konsep pathway dan waypoints. Selain itu, dirancang pula adanya waktu tunggu (pada saat pengunjung melihat objek di museum) dan cara pembuatan jalur bagi setiap individu pengunjung
-		\item Melakukan analisa dan merancang struktur data yang cocok untuk menyimpan penghalang (obstacle)
-		\item Mengimplementasikan keseluruhan algoritma dan struktur data yang dirancang, dengan menggunakan framework OpenSteer 
-		\item Melakukan pengujian (dan eksperimen) yang melibatkan responde untuk menilai hasil simulasi secara kualitatif
+		\item Melakukan studi literatur mengenai teknologi pembuatan \web
+		\item Melakukan studi literatur mengenai bahasa SQL
+            \item Melakukan studi literatur mengenai statistika
+		\item Melakukan studi literatur mengenai visualisasi data
+		\item Mempelajari penggunaan \textit{Google Big Query}
+		\item Melakukan pengumpulan data perkembangan teknologi pembuatan \web
+		\item Melakukan analisa dan visualisasi terhadap data perkembangan teknologi pembuatan \web
+		\item Membangun GUI yang menampilkan hasil analisis dengan fitur yang interaktif 
 		\item Menulis dokumen tugas akhir.
 	\end{enumerate}
 	
 	\section{Rencana Kerja}
 	Rincian capaian yang direncanakan di Tugas Akhir 1 adalah sebagai berikut:
 	\begin{enumerate}
-		\item
-		\item
-		\item
+            \item Melakukan studi literatur mengenai teknologi pembuatan \web
+		\item Melakukan studi literatur mengenai bahasa SQL
+            \item Melakukan studi literatur mengenai statistika
+		\item Melakukan studi literatur mengenai visualisasi data
+		\item Mempelajari penggunaan \textit{Google Big Query}
+            \item Menulis dokumen tugas akhir
 	\end{enumerate}
 	
 	Sedangkan yang akan diselesaikan di Tugas Akhir 2 adalah sebagai berikut:
 	\begin{enumerate}
-		\item
-		\item
-		\item
+            \item Melakukan pengumpulan data perkembangan teknologi pembuatan \web
+		\item Melakukan analisa dan visualisasi terhadap data perkembangan teknologi pembuatan \web
+		\item Membangun GUI yang menampilkan hasil analisis dengan fitur yang interaktif 
+		\item Menulis dokumen tugas akhir.
 	\end{enumerate}
 	
 	\vspace{1cm}
@@ -129,6 +145,6 @@
 		\vspace{0.5cm}
 	}{
 		% \centering Bandung, \makebox[0.5cm]{\hrulefill}/\makebox[0.5cm]{\hrulefill}/2013\\
-		\vspace{2cm} Nama: \makebox[3cm]{\hrulefill}\\ Pembimbing Tunggal
+		\vspace{2cm} Pascal~Alfadian,~Nugroho,~M.Comp.\\ Pembimbing Tunggal
 	}
 \end{document}
