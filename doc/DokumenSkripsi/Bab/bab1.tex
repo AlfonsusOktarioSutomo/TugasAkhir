@@ -5,27 +5,31 @@
 \section{Latar Belakang}
 \label{sec:label}
 
-Internet merupakan jaringan yang menghubungkan berbagai macam perangkat yang memungkinkan pertukaran informasi secara cepat. Pertukaran informasi di internet diatur oleh sebuah protokol. Protokol tersebut adalah TCP/IP(\textit{Transmission Control Protocol/Internet Protocol}). Informasi yang diberikan oleh penyedia informasi tentunya harus mudah dimengerti oleh orang yang mengakses informasi tersebut. Informasi yang mudah dimengerti tidak hanya dalam bentuk tulisan, namun bisa juga berupa gambar, video, atau suara. Kebutuhan inilah yang menyebabkan munculnya layanan \web yang berjalan di atas internet.
+Perkembangan teknologi pembuatan \web telah mengalami perubahan yang sangat pesat dalam 5 tahun terakhir. Sejak kemunculannya, \web telah menjadi platform utama dalam penyebaran informasi, komunikasi, hingga transaksi digital. Seiring meningkatnya kebutuhan pengguna terhadap kecepatan, keamanan, dan interaktivitas, berbagai teknologi baru terus bermunculan untuk mendukung pengembangan \web yang lebih efisien dan responsif.
 
-Layanan \web(\textit{World Wide Web}) memiliki protokol HTTP(\textit{HyperText Transfer Protocol}) sebagai aturan dalam pertukaran informasi yang dilakukan. Layanan \web ini dibangun dengan menggunakan berbagai teknologi yang ada, dalam perkembangannya banyak bermunculan pihak ketiga yang memberikan layanan berupa teknologi untuk membuat halaman web dari segi \textit{front end} maupun dari segi \textit{back end}, beberapa contoh dari teknologi tersebut adalah PHP, JavaScript, dan MySQL. Perkembangan teknologi ini kemudian dicatat oleh sebuah situs bernama \textit{HTTP Archive}.
+Internet sendiri merupakan jaringan yang menghubungkan berbagai perangkat untuk memungkinkan pertukaran informasi secara cepat. Pertukaran informasi ini diatur oleh protokol utama TCP/IP (\textit{Transmission Control Protocol/Internet Protocol}). Namun, informasi yang dikirimkan di internet harus mudah dipahami oleh pengguna, tidak hanya dalam bentuk teks tetapi juga melalui gambar, video, dan suara. Kebutuhan inilah yang mendorong berkembangnya layanan \web (\textit{World Wide \web}), yang memungkinkan penyajian informasi secara lebih interaktif dengan memanfaatkan protokol HTTP (\textit{HyperText Transfer Protocol}).
 
-Situs \web \textit{HTTP archive} ini mencatat perkembangan teknologi yang dipakai dalam membuat \web. Situs ini mencatat perkembangan penggunaan teknologi berdasarkan beberapa kriteria seperti pengalaman pengguna dalam menggunakan \web, kecepatan sebuah \web dalam memuat informasi, dan tingkat aksesibilitas sebuah \web. Dalam penelitian ini aspek yang akan diamati dari perkembangan teknologi pembuatan \web adalah CrUX(\textit{Chrome User Experience}). Aspek ini mengukur tingkat interaktif dan lamanya sebuah \web dalam memuat informasi berdasarkan pengalaman nyata pengguna Chrome dengan kondisi yang bervariasi.
+Teknologi pembuatan \web semakin beragam dalam perkembangannya, baik dari sisi \textit{front-end} maupun \textit{back-end}. Beberapa teknologi utama yang mendukung pengembangan \web di antaranya adalah JavaScript, PHP, dan MySQL. Munculnya berbagai \textit{framework} dan pustaka seperti React, Vue.js, dan Node.js juga mempercepat adopsi teknologi baru dalam pengembangan \web modern. Perubahan ini membuat pentingnya pemantauan tren teknologi \web agar pengembang dapat memilih teknologi yang sesuai dengan kebutuhan pengguna dan standar industri.
 
-Data yang telah didapatkan dari situs \web \textit{HTTP archive} ini disimpan ke dalam sebuah layanan penyimpanan data berbasis \textit{cloud} yang dikembangkan oleh Google yaitu \textit{Google Big Query}. Layanan ini memungkinkan penggunanya untuk memproses data dengan menggunakan \textit{query SQL}. SQL sendiri merupakan bahasa pemrograman untuk mengelola \textit{big data}. SQL juga memiliki fungsi untuk menyimpan, mengubah, menghapus, dan mengambil data dalam sistem manajemen basis data.
+Situs \textit{HTTP Archive} menyediakan data tentang teknologi yang digunakan dalam pembuatan \web untuk mencatat perkembangan teknologi ini. Situs ini mengumpulkan data berdasarkan berbagai aspek, seperti pengalaman pengguna dalam mengakses \web, kecepatan pemuatan halaman, serta tingkat aksesibilitas. Salah satu aspek utama yang diamati dalam penelitian ini adalah \textit{Chrome User Experience Report} (CrUX), yang mengukur tingkat interaktivitas dan kecepatan pemuatan \web berdasarkan data nyata dari pengguna peramban Google Chrome.
 
-        \begin{figure}[]
+Data dari \textit{HTTP Archive} kemudian disimpan dalam \textit{Google BigQuery}, layanan penyimpanan dan analisis data berbasis \textit{cloud} yang memungkinkan pemrosesan data dalam skala besar menggunakan \textit{query SQL}. Dengan adanya teknologi ini, analisis terhadap perkembangan teknologi pembuatan \web dapat dilakukan secara lebih mendalam dan berbasis data yang akurat.
+
+Untuk mempermudah pemahaman terhadap hasil analisis, penelitian ini akan menggunakan visualisasi data dalam bentuk grafik. Salah satu bentuk visualisasi yang digunakan adalah \textit{line chart}, yang dapat menunjukkan tren perubahan teknologi dalam rentang waktu tertentu secara lebih jelas. Contoh \textit{line chart} dapat dilihat pada gambar~\ref{fig:contohlinechart}\footnote{Gambar didapatkan dari \url{https://www.simonsezit.com/article/how-to-make-a-line-graph-in-excel/}}. Perkembangan penggunaan berbagai teknologi \web dapat divisualisasikan sehingga pola-pola perubahan dapat dikenali dengan lebih mudah dengan menggunakan \textit{line chart}. Selain itu, bentuk visualisasi lainnya seperti \textit{bar chart} dan \textit{scatter plot} juga odigunakan untuk memberikan perspektif tambahan terhadap data yang dianalisis.
+
+\begin{figure}[]
         \centering
         \includegraphics[width=0.5\linewidth]{Gambar/contoh linechart.jpg}
         \caption{Contoh \textit{line chart}}
         \label{fig:contohlinechart}
     \end{figure}
 
-    Data perkembangan ini kemudian disajikan dalam bentuk visualisasi agar lebih mudah dimengerti. Salah satu bentuk visualisasi yang dapat digunakan untuk menjelaskan perkembangan ini adalah \textit{line chart}. Contoh \textit{line chart} dapat dilihat pada gambar~\ref{fig:contohlinechart}\footnote{Gambar didapatkan dari \url{https://www.simonsezit.com/article/how-to-make-a-line-graph-in-excel/}}. Visualisasi ini dapat memperlihatkan perkembangan secara jelas dengan rentang waktu yang lebih lebar. Hal ini berguna karena data yang digunakan adalah data dari 60 bulan terakhir atau data dari bulan oktober 2018 hingga bulan desember 2024.
+Penelitian ini bertujuan untuk memahami bagaimana tren teknologi pembuatan \web berkembang dalam 5 tahun terakhir, dari Oktober 2018 hingga Desember 2024. Dengan menggunakan data dari \textit{HTTP Archive} dan \textit{Google BigQuery}, penelitian ini akan mengeksplorasi perubahan signifikan dalam penggunaan teknologi \web dan dampaknya terhadap pengalaman pengguna. Hasil analisis ini diharapkan dapat memberikan wawasan bagi pengembang \web dan industri teknologi dalam memahami arah perkembangan \web di masa depan.
     
 \section{Rumusan Masalah}
 	Rumusan masalah yang akan diselesaikan dalam penelitian ini adalah:
     \begin{enumerate}
-        \item Bagaimana perkembangan teknologi pembuatan \web selama 60 bulan terakhir?
+        \item Bagaimana perkembangan teknologi pembuatan \web selama 5 tahun terakhir?
         \item Bagaimana pekembangan teknologi pembuatan \web yang banyak digunakan oleh pembuat \web?
         \item Bagaimana cara menyajikan pekembangan teknologi pembuatan \web kepada pengguna?
     \end{enumerate}
@@ -33,7 +37,7 @@ Data yang telah didapatkan dari situs \web \textit{HTTP archive} ini disimpan ke
 \section{Tujuan}
 	Tujuan yang akan dicapai dari penelitian ini adalah:
     \begin{enumerate}
-        \item Mengetahui perkembangan teknologi pembuatan \web selama 60 bulan terakhir.
+        \item Mengetahui perkembangan teknologi pembuatan \web selama 5 tahun terakhir.
         \item Mengetahui perkembangan teknologi pembuatan \web yang banyak digunakan oleh pembuat \web.
         \item Membuat perangkat lunak untuk menyajikan perkembangan teknologi pembuatan \web.
     \end{enumerate}
@@ -41,7 +45,7 @@ Data yang telah didapatkan dari situs \web \textit{HTTP archive} ini disimpan ke
 \label{sec:batasan}
 Batasan masalah yang diterapkan pada penelitian ini adalah sebagai berikut:
 \begin{enumerate}
-    \item Data yang digunakan berasal dari rentang 60 bulan terkahir. Hal ini dimaksudkan untuk membatasi ukuran data agar tidak besar.
+    \item Data yang digunakan berasal dari rentang 5 tahun terkahir. Hal ini dimaksudkan untuk membatasi ukuran data agar tidak besar.
     \item Data yang akan dianalisis adalah data jumlah penggunaan dan persentase penggunaan. Hal ini dilakukan agar cakupan analisis tidak terlalu besar.
 \end{enumerate}
 
@@ -49,11 +53,11 @@ Batasan masalah yang diterapkan pada penelitian ini adalah sebagai berikut:
 \label{sec:metlit}
 Metodologi yang digunakan dalam melakukan penelitian ini adalah sebagai berikut:
 \begin{itemize}
-    \item Mengumpulkan data penggunaan teknologi pembuatan \web selama 60 bulan terakhir.
+    \item Mengumpulkan data penggunaan teknologi pembuatan \web selama 5 tahun terakhir.
     \item Membersihkan data dari kolom dan baris yang tidak digunakan.
     \item Melakukan analisis dengan menggunakan data dengan skala lebih kecil.
     \item Melakukan analisis dengan menggunakan data yang sebenarnya.
-    \item Membuat GUI untuk menampilkan hasil analisis secara interaktif.
+    \item Membuat perangkat lunak untuk menampilkan hasil analisis secara interaktif.
 \end{itemize}
 
 \section{Sistematika Pembahasan}
@@ -76,9 +80,9 @@ Sistematika pembahasan tugas akhir ini adalah:
     
     Membahas eksplorasi dan analisis data dengan menggunakan data \textit{real}.
 
-    \item Bab 5: Pembuatan GUI dan Peluncuran Model
+    \item Bab 5: Pembuatan perangkat lunak dan Peluncuran Model
 
-    Membahas tentang pembuatan GUI dan pengujian fungsional GUI untuk menampilkan hasil anlisis secara interaktif.
+    Membahas tentang pembuatan perangkat lunak dan pengujian fungsional perangkat lunak untuk menampilkan hasil anlisis secara interaktif.
 
     \item Bab 6 : Kesimpulan dan Saran
 
