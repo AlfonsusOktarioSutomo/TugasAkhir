@@ -2,13 +2,123 @@
 \chapter{Landasan Teori}
 \label{chap:teori}
 
-ab ini akan berisikan tentang beberapa teori dari metode atau hal-hal yang diperlukan dalam melakukan penelitian ini seperti apa itu teknologi pembuatan \web, SQL, statistika, dan visualisasi data.
+Bab ini akan berisikan tentang beberapa teori dari metode atau hal-hal yang diperlukan dalam melakukan penelitian ini seperti apa itu \http, SQL, statistika, dan visualisasi data.
 
-\section{Teknologi pembuatan \web}
-\label{sec:web} 
+\section{\http~\cite{httpreports}}
+\label{sec:httparchive} 
+
+\http merupakan sebuah situs \web yang menyediakan catatan dari kurun waktu tertentu. Hal ini dilakukan agar pemilik halaman \web dapat melihat kembali hal yang sudah terjadi, perilaku yang sedang terjadi, dan menemukan tren yang akan muncul.
+
  
-Menurut KBBI \web adalah sistem untuk mengunduh, mengakses, atau memanipulasi informasi yang ada di dalam komputer yang dihubungkan melalui internet. Seiring dengan perkembangan waktu \web dibangun dengan menggunakan berbagai macam teknologi.
-Teknologi-teknologi yang dipakai untuk membuat \web dibagi ke dalam dua bagian yaitu teknologi untuk membuat \textit{front-end} dan teknologi untuk membuat \textit{back-end}. \textit{Web} yang sudah jadi kemudian diukur performanya. Performa dari sebuah web diukur menggunakan matriks penilaian. Penilaian performa ini didasarkan pada pengalaman pengguna \web yang akan dinilai. Diterjemahkan dari Zigisova dalam bukunya, matriks penilaian yang digunakan adalah \textit{Core Web Vitals} di mana matriks ini memiliki tiga komponen penilaian utama yang mencakup penilaian performa saat memuat konten, penilaian tingkat interaktif, dan penilaian stabilitas visual.~\cite{WebAlmanac.2024.Performance}. Matriks-matirks penilaian ini yang akan dianalisis
+\subsection{\textit{Reports}}
+\label{subsec:reports}
+
+\textit{Reports} berisi informasi terperinci mengenai sumber daya yang diambil, API dan fitur platform yang digunakan, serta jejak eksekusi dari setiap halaman dari situs-situs teratas yang ada di \web. Informasi yang telah didapatkan kemudian diolah dan dianalisis untuk melihat perkembangan tren. \textit{Reports} yang dimiliki oleh situs \http dibagi menjadi beberapa kategori. Kategori tersebut adalah sebagai berikut:
+
+\subsubsection{\textit{State of the Web}} 
+\label{subsub:StateWeb}
+
+\textit{State of the Web} berisi \textit{report} yang menangkap perkembangan \web secara jangka panjang  termasuk teknik untuk efisiensi jaringan dan penggunaan standar seperti HTTPS. \textit{Reports} ini mencakup beberapa hal yaitu:
+\begin{itemize}
+    \item \textit{Sample size} yang berisi perkembangan jumlah URLs yang digunakan untuk dianalisis.
+
+    \item \textit{Total Kilobytes} yang berisi jumlah dari ukuran perpindahan \textit{kilobytes} dari semua sumber daya yang di \textit{request} oleh halaman \web.
+
+    \item \textit{Total Request} yang berisi jumlah\textit{rescource} yang di \textit{request} oleh halaman \web.
+
+    \item \textit{HTTPS Requests} yang berisi persentase dari semua \textit{request} dari halaman \web yang menggunakan URL dengan awalan HTTPS.
+
+    \item \textit{TCP Connections per Page} yang berisi jumlah koneksi TCP dari setiap halaman.
+
+    \item \textit{HTTP/2 Requests} yang berisi persentse dari semua \textit{request} yang menggunakan HTTP/2.
+
+    \item \textit{HTTP/3 Support} yang berisi persentase dari semua \textit{request} yang mendukung protokol HTTP/3.
+
+    \item \textit{Font Display} yang berisi persentase dari halaman yang menghindari munculnya teks tidak terlihat dengan sekejap sewaktu \web memuat font dengan menggunakan properti CSS \verb|font-display|. Matriks ini diukur dengan menggunakan \textit{Lighthouse}.
+
+    
+\end{itemize}
+
+\subsubsection{\textit{State of JavaScript}}
+\label{subsub:stateofjs}
+
+\textit{JavaScript} membuat halaman \web dapat memiliki aplikasi yang kaya dan lebih interaktif. \textit{Report} dalam kategori ini bertujuan untuk melihat penggunaan \textit{JavaScript} dalam \web dan adopsi serta trennya untuk perangkat \textit{mobile}. Report ini akan menganalisis skrip eksternal. Skrip eksternal ini dimaksudkan untuk \textit{resource file} yang menggunakan ekstensi \verb|js| atau \verb|json| atau sebuah tipe MIME((\textit{Multipurpose Internet Mail Extensions}) yang mengandung \verb|script| atau \verb|json|. Beberapa hal yang dianalisis adalah sebagai berikut:
+\begin{itemize}
+    \item \textit{JavaScript Bytes} yang berisi jumlah ukuran perpindahan \textit{kilobytes} dari skrip eksternal yang di \textit{request}. 
+
+    \item \textit{JavaScript Requests} yang berisi jumlah skrip eksternal yang di \textit{request} oleh halaman \web.
+
+    
+    \item \textit{JavaScript Boot-Up Time} yang berisi jumlah dari waktu CPU yang dibutuhkan oleh setiap \textit{script} di setiap halaman \web. Matriks ini diukur menggunakan \textit{Lighthouse}.
+\end{itemize}
+
+\subsubsection{\textit{State of Images}}
+
+\textit{Images} atau gambar merupakan tipe \textit{resource} yang populer digunakan dalam \web. \textit{Report} ini adalah hasil analisa penggunaan gambar eksternal di seluruh \web. Gambar eksternal adalah \textit{resource} yang memiliki ekstensi \verb|png, gif, jpg, jpeg, webp, ico,| atau \verb|svg| atau sebuah tipe MIME((\textit{Multipurpose Internet Mail Extensions}) yang mengandung \verb|image|. \textit{Report} yang masuk kategori ini adalah:
+\begin{itemize}
+    \item \textit{Image Bytes} yang berisi jumlah ukuran perpindahan \textit{kilobytes} dari gambar eksternal yang di \textit{request} oleh halaman \web.
+
+    \item \textit{Image Request} yang berisi jumlah gambar eksternal yang di \textit{request} oleh halaman \web.
+
+    \item \textit{Offscreen Image Save} yang berisi jumlah \textit{kilobytes} yang dapat dihemat oleh setiap halaman menggunakan \textit{lazy-loading offscreen} dan gambar tersembunyi. Matriks ini berasal dari \textit{Lighthouse},
+
+    \item \textit{Optimize Image Savings} yang berisi jumlah \textit{kilobytes} yang dapat dihemat oleh setiap halaman dengan mengatur kompresi JPEG ke 85 atau lebih kecil.
+
+    \item \textit{Native Image Lazy Loading} yang berisi persentase dari halaman yang memiliki atribut \verb|loading = lazy| di dalam elemen \verb|img|.
+\end{itemize}
+
+\subsubsection{\textit{Loading Speed}}
+\label{subsub:loading}
+
+Performa \web dapat berpengaruh langsung terhadap bisnis seperti kepuasan pengguna. \textit{Reports} ini adalah akan menganalisis berbagai matriks performa dalam siklus pemuatan halaman \web termasuk yang digunakan oleh aplikasi \web modern.
+
+\subsubsection{\textit{Progressive Web App}}
+\label{subsub:pwa}
+
+\textit{Report} ini akan mengkaji status dari \textit{Progresive Web App}. \textit{Progressive Web App} adalah kelas baru dari aplikasi \web yang disediakan oleh \textit{Service Workers APIs}. \textit{Service Workers} memungkinkan aplikasi untuk mendukung proses muat jaringan secara independen, menerima \textit{push notifications} untuk menyinkronkan data di \textit{background}.
+
+
+\subsubsection{\textit{Accessibility}}
+\label{subsub:access}
+
+\textit{Report} ini menjelaskan tingkat aksesibilitas dari sebuah halaman \web. Penilaian ini dilakukan oleh \textit{Lighthouse}.
+
+
+\subsubsection{\textit{SEO}}
+\label{subsub:seo}
+
+\textit{Report} yang akan menelusuri penggunaan beberapa teknik agar halaman \web dapat dikenali oleh mesin pencarian secara lebih baik.
+
+\subsubsection{\textit{Page Weight}}
+\label{subsub:pageweight}
+
+\textit{Report} ini menelusuri ukuran dan banyaknya \textit{resource} dari banyak halaman \web populer. Ukuran dalam hal ini merepresentasikan jumlah \textit{byte} yang dikirimkan melalui jaringan.
+
+\subsubsection{\textit{CrUx}}
+\label{subsub:crux}
+
+\textit{Report} ini akan menelusuri tingkat interaktivitas dan proses muat dari pengguna \textit{Chrome} di dunia nyata melalui berbagai kondisi perangkat keras dan jaringan.
+
+\subsubsection{\textit{Capabilities}}
+\label{subsub:capable}
+
+
+
+\subsubsection{\textit{Core Web Vitals Technology Report}}
+
+\subsection{2024 \textit{Web Almanac}}
+\label{subsec:almanac}
+\subsubsection{\textit{Introduction}}
+\textit{Web Almanac} merupakan kombinasi dari statistik yang masih mentah dan tren yang ada di \http dengan keahlian komunitas \web. \textit{Web Almanac} memiliki 20 bab yang mencakup banyak aspek seperti isi konten dalam halaman, pengalaman pengguna, distribusi, dan penerbitan.
+
+\subsubsection{\textit{Method}}
+Metode yang digunakan oleh \http dalam mengumpulkan data perkembangan pembuatan \web sejak 2010 adalah dengan menggunakan \textit{WebPageTest} dan \textit{Lighthouse}. \textit{Lighthouse} adalah sebuah alat \textit{open-source} yang disediakan oleh \textit{Google} untuk meningkatkan kualitas halaman \web~\cite{lighthouse}. \textit{Lighthouse} dapat melakukan pemeriksaan terhadap performa, aksesibilitas, dan SEO(\textit{Search Engine Optimization}) dari sebuah halaman \web
+
+\subsection{\textit{Public Dataset}}
+\label{subsec:pd}
+\http memberikan akses terhadap informasi yang lebih detail mengenai hal-hal yang ada di setiap \textit{website}, seperti \textit{metadata} dari \textit{request} dan \textit{response}, \textit{response bodies}, jejak eksekusi, dan lain-lain.
+
+
 
 \section{\textit{Structure Query Language}}
 \label{sec:sql}

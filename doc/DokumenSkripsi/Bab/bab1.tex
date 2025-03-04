@@ -11,20 +11,25 @@ Internet sendiri merupakan jaringan yang menghubungkan berbagai perangkat untuk 
 
 Teknologi pembuatan \web semakin beragam dalam perkembangannya, baik dari sisi \textit{front-end} maupun \textit{back-end}. Beberapa teknologi utama yang mendukung pengembangan \web di antaranya adalah JavaScript, PHP, dan MySQL. Munculnya berbagai \textit{framework} dan pustaka seperti React, Vue.js, dan Node.js juga mempercepat adopsi teknologi baru dalam pengembangan \web modern. Perubahan ini membuat pentingnya pemantauan tren teknologi \web agar pengembang dapat memilih teknologi yang sesuai dengan kebutuhan pengguna dan standar industri.
 
-Situs \textit{HTTP Archive} menyediakan data tentang teknologi yang digunakan dalam pembuatan \web untuk mencatat perkembangan teknologi ini. Situs ini mengumpulkan data berdasarkan berbagai aspek, seperti pengalaman pengguna dalam mengakses \web, kecepatan pemuatan halaman, serta tingkat aksesibilitas. Salah satu aspek utama yang diamati dalam penelitian ini adalah \textit{Chrome User Experience Report} (CrUX), yang mengukur tingkat interaktivitas dan kecepatan pemuatan \web berdasarkan data nyata dari pengguna peramban Google Chrome.
+Penelitian ini bertujuan untuk mengetahui tren perkembangan penggunaan teknologi pembuatan \web. Penelitian ini merupakan pengembangan dari penelitian yang telah dilakukan sebelumnya~\cite{Nugroho} yang menjawab pertanyaan berapa banyak \web yang menggunakan teknologi yang jarang dipakai oleh kebanyakan \textit{developer}.
 
-Data dari \textit{HTTP Archive} kemudian disimpan dalam \textit{Google BigQuery}, layanan penyimpanan dan analisis data berbasis \textit{cloud} yang memungkinkan pemrosesan data dalam skala besar menggunakan \textit{query SQL}. Dengan adanya teknologi ini, analisis terhadap perkembangan teknologi pembuatan \web dapat dilakukan secara lebih mendalam dan berbasis data yang akurat.
+Situs \http menyediakan data tentang teknologi yang digunakan dalam pembuatan \web untuk mencatat perkembangan teknologi ini. Situs ini mengumpulkan data berdasarkan berbagai aspek, seperti pengalaman pengguna dalam mengakses \web, kecepatan pemuatan halaman, serta tingkat aksesibilitas. Salah satu aspek utama yang diamati dalam penelitian ini adalah \textit{Chrome User Experience Report} (CrUX), yang mengukur tingkat interaktivitas dan kecepatan pemuatan \web berdasarkan data nyata dari pengguna peramban Google Chrome.
 
-Untuk mempermudah pemahaman terhadap hasil analisis, penelitian ini akan menggunakan visualisasi data dalam bentuk grafik. Salah satu bentuk visualisasi yang digunakan adalah \textit{line chart}, yang dapat menunjukkan tren perubahan teknologi dalam rentang waktu tertentu secara lebih jelas. Contoh \textit{line chart} dapat dilihat pada gambar~\ref{fig:contohlinechart}\footnote{Gambar didapatkan dari \url{https://www.simonsezit.com/article/how-to-make-a-line-graph-in-excel/}}. Perkembangan penggunaan berbagai teknologi \web dapat divisualisasikan sehingga pola-pola perubahan dapat dikenali dengan lebih mudah dengan menggunakan \textit{line chart}. Selain itu, bentuk visualisasi lainnya seperti \textit{bar chart} dan \textit{scatter plot} juga odigunakan untuk memberikan perspektif tambahan terhadap data yang dianalisis.
+Data dari \http kemudian disimpan dalam \textit{Google BigQuery}, layanan penyimpanan dan analisis data berbasis \textit{cloud} yang memungkinkan pemrosesan data dalam skala besar menggunakan \textit{query SQL}. Dengan adanya teknologi ini, analisis terhadap perkembangan teknologi pembuatan \web dapat dilakukan secara lebih mendalam dan berbasis data yang akurat.
+
+Untuk mempermudah pemahaman terhadap hasil analisis, penelitian ini akan menggunakan visualisasi data dalam bentuk grafik. Salah satu bentuk visualisasi yang digunakan adalah \textit{line chart}, yang dapat menunjukkan tren perubahan teknologi dalam rentang waktu tertentu secara lebih jelas. Contoh \textit{line chart} dapat dilihat pada gambar~\ref{fig:contohlinechart}.
+%\footnote{Gambar didapatkan dari \url{https://www.simonsezit.com/article/how-to-make-a-line-graph-in-excel/}}. 
+
+Perkembangan penggunaan berbagai teknologi \web dapat divisualisasikan sehingga pola-pola perubahan dapat dikenali dengan lebih mudah dengan menggunakan \textit{line chart}. Selain itu, bentuk visualisasi lainnya seperti \textit{bar chart} dan \textit{scatter plot} juga odigunakan untuk memberikan perspektif tambahan terhadap data yang dianalisis.
 
 \begin{figure}[]
         \centering
-        \includegraphics[width=0.5\linewidth]{Gambar/contoh linechart.jpg}
+        \includegraphics[width=0.5\linewidth]{Gambar/ContohLineChart.png}
         \caption{Contoh \textit{line chart}}
         \label{fig:contohlinechart}
     \end{figure}
 
-Penelitian ini bertujuan untuk memahami bagaimana tren teknologi pembuatan \web berkembang dalam 5 tahun terakhir, dari Oktober 2018 hingga Desember 2024. Dengan menggunakan data dari \textit{HTTP Archive} dan \textit{Google BigQuery}, penelitian ini akan mengeksplorasi perubahan signifikan dalam penggunaan teknologi \web dan dampaknya terhadap pengalaman pengguna. Hasil analisis ini diharapkan dapat memberikan wawasan bagi pengembang \web dan industri teknologi dalam memahami arah perkembangan \web di masa depan.
+Penelitian ini bertujuan untuk memahami bagaimana tren teknologi pembuatan \web berkembang dalam 5 tahun terakhir, dari Oktober 2018 hingga Desember 2024. Dengan menggunakan data dari \http dan \textit{Google BigQuery}, penelitian ini akan mengeksplorasi perubahan signifikan dalam penggunaan teknologi \web dan dampaknya terhadap pengalaman pengguna. Hasil analisis ini diharapkan dapat memberikan wawasan bagi pengembang \web dan industri teknologi dalam memahami arah perkembangan \web di masa depan.
     
 \section{Rumusan Masalah}
 	Rumusan masalah yang akan diselesaikan dalam penelitian ini adalah:
@@ -70,7 +75,7 @@ Sistematika pembahasan tugas akhir ini adalah:
     
     \item Bab 2: Landasan Teori
 
-    Membahas \web, \textit{HTTP Archive}, bahasa SQL, \textit{Google Big Query}, dan visualisasi data yang digunakan.
+    Membahas \web, \http, bahasa SQL, \textit{Google Big Query}, dan visualisasi data yang digunakan.
 
     \item Bab 3: Analisis Masalah
 
