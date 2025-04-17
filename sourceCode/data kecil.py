@@ -6,7 +6,7 @@ Spyder Editor
 import pandas as pd
 import plotly.graph_objects as go
 
-df = pd.read_csv("data_sample2.csv")
+df = pd.read_csv("data_sample2.csv") 
 df_gb = df.groupby(["technology"]).sum('f0_')
 jumlah = df_gb['f0_'].sum()
 df_sorted = df_gb.sort_values(by='f0_', ascending=False)
@@ -15,8 +15,13 @@ df_10 = df_sorted.head(10)
 df_baru = df.loc[df['technology'].isin(df_10.index)]
 df_baru = df_baru[['date','technology','f0_']]
 df_baru['f0_'] = df_baru['f0_']/jumlah
-df_baru.drop_duplicates(subset='date')
+df_baru.drop_duplicates(subset='date')      
 df_pivot = df_baru.pivot_table(index="date", columns='technology', values='f0_')
+df_pivot['jumlah'] = df_pivot.sum(axis=1)
+df_pivot.to_excel("10 teknologi populer.xlsx")
+for i in df_pivot.columns:
+      df_pivot[i] = df_pivot[i]/df_pivot['jumlah']
+df_pivot = df_pivot.drop(columns = 'jumlah')
 df_filled = df_pivot.fillna('0')
 
 fig2 = go.Figure()
