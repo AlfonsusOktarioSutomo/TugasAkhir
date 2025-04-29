@@ -348,7 +348,7 @@ Laporan \textit{Core Web Vitalis Technology} merupakan dasbor yang berisi gabung
 \label{subsec:almanac}
 
 \textit{Web Almanac} merupakan kombinasi dari statistik yang masih mentah dan tren yang ada di \http dengan keahlian komunitas \web. \textit{Web Almanac} memiliki 19 bab yang berisi hal berikut ini:
-\begin{itemize}
+\begin{enumerate}
     \item \textit{JavaScript} Bab yang berisi hasil evaluasi peran \textit{JavaScript} dalam dunia \web. 
     \item \textit{Markup} Bab yang berisi tentang analisis dari halaman HTML yang dimiliki oleh \web yang dievaluasi.
     \item \textit{Structured Data} Bab yang berisi hasil analisis tren di tahun lalu dan memeriksa perkembanan cepat yang terjadi.
@@ -368,7 +368,7 @@ Laporan \textit{Core Web Vitalis Technology} merupakan dasbor yang berisi gabung
     \item \textit{CDN} Bab yang berisi hasil kajian terhadap \textit{Content Delivery Network} dan peran pentingnya dalam ekosistem digital saat ini.
     \item \textit{HTTP} Bab yang berisi hasil analaisis penggunaan HTTP/1.1, HTTP/2, dan HTTP/3 serta perkembanganya saat ini.
     \item \textit{Cookies} Bab yang berisi hasil analaisis struktur \textit{cookie} dari halaman \web.
-\end{itemize}
+\end{enumerate}
 
 Metode yang digunakan oleh \http dalam mengumpulkan data perkembangan pembuatan \web sejak 2010 adalah dengan menggunakan \textit{WebPageTest} dan \light. \light adalah sebuah alat \textit{open-source} yang disediakan oleh \textit{Google} untuk meningkatkan kualitas halaman \web~\cite{lighthouse}. \light dapat melakukan pemeriksaan terhadap performa, aksesibilitas, dan SEO(\textit{Search Engine Optimization}) dari sebuah halaman \web.
 
@@ -377,21 +377,145 @@ Metode yang digunakan oleh \http dalam mengumpulkan data perkembangan pembuatan 
 \http memberikan akses terhadap informasi yang lebih detail mengenai hal-hal yang ada di setiap \textit{website}, seperti \textit{metadata} dari \textit{request} dan \textit{response}, \textit{response bodies}, jejak eksekusi, dan lain-lain. \http memberikan beberapa tabel yang dapat digunakan seperti berikut ini:
 
 \begin{itemize}
-    \item \textit{crawl} adalah tabel yang telah dipartisi dan dikelompokan yang berisi halaman yang dites oleh \http.
-    \item \textit{sample\_data} adalah tabel yang merupakan potongan dari tabel \textit{crawl} yang dapat digunakan untuk menjalankan \textit{query} dengan waktu eksekusi yang lebih cepat.
-    \item \textit{technologies} yang berisi mengenai detail dari teknologi yang dipakai oleh berbagai \web.
+    \item \textit{crawl} adalah tabel yang berisi detail mengenai halaman yang dites oleh \http. Data ini memiliki kolom sebagai berikut:
+    \begin{itemize}
+        \item \textit{date}
+        \item \textit{client}
+        \item \textit{page}
+        \item \textit{is\_root\_page}
+        \item \textit{root\_page}
+        \item \textit{rank}
+        \item \textit{wptid}
+        \item \textit{payload}
+        \item \textit{summary}
+        \item \textit{custom\_metric}
+        \item \textit{lighthouse}
+        \item \textit{features}
+        \item \textit{technologies}
+        \item \textit{metadata}
+    \end{itemize}
+    
+    \item \textit{sample\_data} adalah tabel yang merupakan potongan dari tabel \textit{crawl} yang berisi halaman-halaman yang dites dan memiliki peringkat popularitas diatas 10.000 berdasarkan CrUX. Tabel ini memiliki kolom sebagai berikut:
+    \begin{itemize}
+        \item \textit{date}
+        \item \textit{client}
+        \item \textit{page}
+        \item \textit{is\_root\_page}
+        \item \textit{root\_page}
+        \item \textit{rank}
+        \item \textit{wptid}
+        \item \textit{payload}
+        \item \textit{summary}
+        \item \textit{custom\_metric}
+        \item \textit{lighthouse}
+        \item \textit{features}
+        \item \textit{technologies}
+        \item \textit{metadata}
+    \end{itemize}
+
+    \item \textit{request} adalah tabel yang berisi \textit{request} dari halaman yang diuji oleh \http. TAbel ini memiliki kolom sebagai berikut:
+    \begin{itemize}
+         \item \textit{date}
+        \item \textit{client}
+        \item \textit{page}
+        \item \textit{is\_root\_page}
+        \item \textit{root\_page}
+        \item \textit{url}
+        \item \textit{is\_main\_document}
+        \item \textit{type}
+        \item \textit{index}
+        \item \textit{payload}
+        \item \textit{summary}
+        \item \textit{request\_header}
+        \item \textit{reponse\_header}
+        \item \textit{response\_ body}
+    \end{itemize}
+
+    
+    \item \textit{technologies} yang berisi mengenai detail dari teknologi yang dipakai oleh berbagai \web. Tabel ini memiiliki tabel sebagai berikut:
+     \begin{itemize}
+        \item \textit{technologies}
+        \item \textit{categories}
+        \item \textit{info}
+    \end{itemize}
+
+    \item \textit{}
 \end{itemize}
 
 
 \section{\textit{Structure Query Language}~\cite{book:SQLBigQuery}}
-\label{sec:sql}
-\textit{Structure Query Language} atau yang biasa disebut SQL merupakan bahasa pemrograman yang bertujuan untuk memanipulasi atau mengubah basis data. Ben Forta dalam bukunya menjelaskan bahwa bahasa ini didesain untuk mengerjakan sebuah perintah dengan tepat dan benar agar proses pembuatan atau pengambilan data berjalan lebih efisien~\cite{ben}. Data disimpan dalam bentuk tabel ke dalam basis data, untuk mengakses data tersebut SQL menyediakan beberapa sintaks yang bisa dipakai. Sintaks yang dapat dipakai adalah sebagai berikut:
+\label{sec:sql} 
+\textit{Structure Query Language} atau yang biasa disebut SQL merupakan bahasa pemrograman yang bertujuan untuk menganalisi dan mengolah basis data relasional. Lakshman dalam bukunya menjelaskan bahwa SQL sangat cocok digunakan dalam lingkungan analitik yang besar seperti dalam lingkungan \textit{Big Query}. Sintaks yang dapat dipakai adalah sebagai berikut:
 \begin{itemize}
     \item \verb|SELECT| dan \verb|FROM| merupakan sintaks yang berguna untuk memilih bagian data yang dibutuhkan dari tabel tertentu.
-    \item \verb|WHERE| adalah sintaks yang berguna untuk memberikan kondisi tertentu dalam memilih data. Kondisi yang diinginkan bisa lebih dari satu maka dari itu untuk menggabungkan beberapa kondisi dapat digunakan fungsi \verb|AND| atau \verb|OR|.
+    \begin{lstlisting}[language=SQL, caption=contoh penggunaan sintaks \lstinline|SELECT|, label=kode:contohselect]
+        SELECT
+            date, client
+        FROM
+            `httparchive.crawl.pages`
+    \end{lstlisting}
+    Kueri pada potongan Kode~\ref{kode:contohselect} akan mengembalikan tabel yang berisi kolom \textit{date} dan \textit{client} dari tabel \textit{httparchive.crawl.pages}.
+    \item \verb|WHERE| adalah sintaks yang berguna untuk memberikan kondisi tertentu dalam memilih data. Kondisi yang diinginkan bisa lebih dari satu maka dari itu untuk menggabungkan beberapa kondisi dapat digunakan fungsi \verb|AND|, \verb|OR|, atau \verb|BETWEEN|.
+        \begin{lstlisting}[language=SQL, caption=contoh penggunaan sintaks \lstinline|WHERE|, label=kode:contohwhere]
+        SELECT
+            date, client
+        FROM
+            `httparchive.crawl.pages`
+        WEHERE
+            date = "2024-01-01"
+    \end{lstlisting}
+    Kueri pada potongan Kode~\ref{kode:contohwhere} akan mengembalikan tabel yang berisi \textit{date} dan \textit{client} dari tabel \textit{httparchive.crawl.pages} dengan kondisi yang diinginkan adalah nilai dalam kolom \textit{date} yang diambil adalah "2024-01-01".
     \item \verb|GROUP BY| adalah sintaks yang berguna untuk mengelompokan data berdasarkan kelas tertentu yang terdapat dalam data. Pengelompokan ini dapat dilakukan berdasarkan lebih dari satu kelas.
+        \begin{lstlisting}[language=SQL, caption=contoh penggunaan sintaks \lstinline|GROUP BY|, label=kode:contohgroupby]
+        SELECT
+            date, client
+        FROM
+            `httparchive.crawl.pages`
+        WEHERE
+            date = "2024-01-01"
+        GROUP BY
+            client
+    \end{lstlisting}
+     Kueri pada potongan Kode~\ref{kode:contohgroupby} akan mengembalikan tabel yang berisi \textit{date} dan \textit{client} dari tabel \textit{httparchive.crawl.pages} dengan kondisi yang diinginkan adalah nilai dalam kolom \textit{date} yang diambil adalah "2024-01-01". Namun tabel hasil kueri ini akan berisi data yang sudah dikelompokan berdasarkan kelas \textit{client}.
     \item \verb|UNNEST| adalah fungsi yang menggembalikan elemen dari sebuah array menjadi sebuah baris atau \textit{row}.
+      \begin{lstlisting}[language=SQL, caption=contoh penggunaan sintaks \lstinline|UNNEST|, label=kode:contohunnest]
+        SELECT
+            date, client, t.technology
+        FROM
+            `httparchive.crawl.pages,
+            UNNEST (technologies) as t
+        WEHERE
+            date = "2024-01-01"
+        GROUP BY
+            client
+    \end{lstlisting}
+     Kueri pada potongan Kode~\ref{kode:contohunnest} akan mengembalikan tabel yang berisi \textit{date}, \textit{client}, dan \textit{technology} dari tabel \textit{httparchive.crawl.pages} dengan kondisi yang diinginkan adalah nilai dalam kolom \textit{date} yang diambil adalah "2024-01-01". Namun tabel hasil kueri ini akan berisi data yang sudah dikelompokan berdasarkan kelas \textit{client}. Kueri ini juga mengembalikan isi array \textit{technologies} menjadi baris-baris baru
     \item \verb|COUNT| adalah fungsi agregat yang berguna untuk menghitung berapa banyak row yang memiliki nilai tertentu.
+    \begin{lstlisting}[language=SQL, caption=contoh penggunaan sintaks \lstinline|COUNT|, label=kode:contohcount]
+        SELECT
+            date, client, t.technology, COUNT(t.technology)
+        FROM
+            `httparchive.crawl.pages,
+            UNNEST (technologies) as t
+        WEHERE
+            date = "2024-01-01"
+        GROUP BY
+            client, t.technology
+    \end{lstlisting}
+     Kueri pada potongan Kode~\ref{kode:contohcount} akan mengembalikan tabel yang berisi \textit{date}, \textit{client}, \textit{technology}, dan jumlah dari setiap teknologi dari tabel \textit{httparchive.crawl.pages} dengan kondisi yang diinginkan adalah nilai dalam kolom \textit{date} yang diambil adalah "2024-01-01". Namun tabel hasil kueri ini akan berisi data yang sudah dikelompokan berdasarkan kelas \textit{client}. Kueri ini juga mengembalikan isi array \textit{technologies} menjadi baris-baris baru
+    \item \verb|BETWEEN| adalah sintaks yang berguna untuk memberikan rentang pada tipe data \textit{date}.
+    \begin{lstlisting}[language=SQL, caption=contoh penggunaan sintaks \lstinline|BETWEEN|, label=kode:contohbetween]
+        SELECT
+            date, client, t.technology, COUNT(t.technology)
+        FROM
+            `httparchive.crawl.pages,
+            UNNEST (technologies) as t
+        WEHERE
+            date BETWEEN "2024-01-01" and "2025-01-01"
+        GROUP BY
+            client, t.technology
+    \end{lstlisting}
+    Kueri pada potongan Kode~\ref{kode:contohcount} akan mengembalikan tabel yang berisi \textit{date}, \textit{client}, \textit{technology}, dan jumlah dari setiap teknologi dari tabel \textit{httparchive.crawl.pages} dengan kondisi yang diinginkan adalah nilai dalam kolom \textit{date} yang diambil berkisar antara "2024-01-01" dan "2025-01-01". Namun tabel hasil kueri ini akan berisi data yang sudah dikelompokan berdasarkan kelas \textit{client}. Kueri ini juga mengembalikan isi array \textit{technologies} menjadi baris-baris baru
     \item \verb|BETWEEN| adalah sintaks yang berguna untuk memberikan rentang pada tipe data \textit{date}.
 \end{itemize}
 sintaks-sintaks tersebut merupakan sebagian kecil dari sintaks yang dimiliki oleh bahasa SQL.

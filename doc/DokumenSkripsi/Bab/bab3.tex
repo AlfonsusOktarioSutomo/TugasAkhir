@@ -35,7 +35,7 @@ Setelah data yang akan digunakan siap, hal selanjutnya adalah mengolah data ters
 
 \subsubsection{Perkembangan Sepuluh Teknologi Populer}
 \label{subsub: 10semua}
-Hal pertama yang dilakukan adalah dengan memuat data \textit{sample}. Contoh dari data \textit{sample} yang dimuat dapat dilihat pada Tabel~\ref{tab:sample}. Data tersebut berisikan tanggal diambilnya data, perangkat yang digunakan untuk mengambil data, url utama dari halaman \web yang dites, dan teknologi yang digunakan oleh halaman \web yang dites. Data tersebut didapatkan dengan menjalankan query pada potongan Kode~\ref{kode:kumpuldatakecil} 
+Hal pertama yang dilakukan adalah dengan memuat data \textit{sample}. Contoh dari data \textit{sample} yang dimuat dapat dilihat pada Tabel~\ref{tab:sample}. Data tersebut adalah hasil dari menjalankan kode berisikan tanggal diambilnya data, perangkat yang digunakan untuk mengambil data, url utama dari halaman \web yang dites, dan teknologi yang digunakan oleh halaman \web yang dites. Data tersebut didapatkan dengan menjalankan query pada potongan Kode~\ref{kode:kumpuldatakecil} 
 \begin{table}[H]
     \centering
     \caption{Lima baris data \textit{sample}}
@@ -108,13 +108,23 @@ Setelah itu sepuluh teknologi yang paling banyak digunakan akan diambil. Kode ya
         jQuery Migrate & 2.041.754 \\ \hline
     \end{tabular}
 \end{table}
-Setelah sepuluh teknologi yang populer sudah didapatkan, hal selanjutnya yang dicari adalah penggunaan sepuluh teknologi tersebut dalam rentang waktu yang sudah ditentukan. Kode~\verb|df_pivot = df_baru.pivot(index="date", columns='technology', values='f0_')| digunakan untuk melakukan hal ini. Jumlah penggunaan untuk setiap teknologi juga dibagi dengan jumlah pemakaian untuk semua teknologi. Hal ini dilakukan agar lebih terlihat persentase pemakaiannya. Setelah itu hal yang dilakukan adalah memvisualisasikan data yang sudah didapatkan. Hasil visualisasinya dapat dilihat pada Gambar~\ref{fig:sample10}. Terlihat dari hasil visualisasinya bahwa untuk semua teknologi mengalami penurunan pemakaian pada tanggal 1 Agustus 2024. Selain itu semua teknologi terlihat memiliki perkembangan yang hampir mirip dan stabil.
+Setelah sepuluh teknologi yang populer sudah didapatkan, hal selanjutnya yang dicari adalah penggunaan sepuluh teknologi tersebut dalam rentang waktu yang sudah ditentukan. Kode~\verb|df_pivot = df_baru.pivot(index="date", columns='technology', values='f0_')| digunakan untuk melakukan hal ini. Hasilnya kemudian divisualisasikan dan hasilnya dapat dilihat pada Gambar~\ref{fig:samplejumlah10}. Terlihat bahwa pola yang dihasilkan untuk semua teknologi sama, sehingga jumlah penggunaan ini akan dibagi dengan jumlah pemakaian semua teknologi di bulan yang sama.
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\linewidth]{Gambar/Perkembangan 10 teknologi populer.png}
-    \caption{Perkembangan sepuluh teknologi populer berdasarkan jumlah halaman \web}
+    \includegraphics[width=0.7\linewidth]{Gambar/Perkembangan jumlah 10 teknologi populer.png}
+    \caption{Perkembangan jumlah penggunaan sepuluh teknologi populer}
+    \label{fig:samplejumlah10}
+\end{figure}
+
+Hal ini dilakukan agar lebih terlihat persentase pemakaiannya. Setelah itu hal yang dilakukan adalah memvisualisasikan data yang sudah didapatkan. Hasil visualisasinya dapat dilihat pada Gambar~\ref{fig:sample10}. Terlihat dari hasil visualisasinya bahwa untuk semua teknologi mengalami penurunan pemakaian pada tanggal 1 Agustus 2024. Selain itu semua teknologi terlihat memiliki perkembangan yang hampir mirip dan stabil.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{Gambar/Perkembangan persentase.png}
+    \caption{Perkembangan sepuluh teknologi populer berdasarkan persentase penggunaannya}
     \label{fig:sample10}
 \end{figure}
+
 
 \subsubsection{Perkembangan Sepuluh Teknologi pada \textit{Client} \mobile}
 \label{subsub:10mobile}
@@ -141,7 +151,7 @@ Kemudian data yang memiliki \textit{client} \mobile diambil untuk dilakukan peng
     \end{tabular}
 \end{table}
 
-Setelah menemukan sepuluh teknologi yang paling banyak digunakan pada \textit{client} \mobile hal yang selanjutnya dilakukan adalah melakukan visualisasi. Visualisasi ini dilakukan dengan cara yang sama seperti pada Bagian~\ref{subsub: 10semua}, yaitu dengan membagi jumlah penggunaan setiap teknologi dengan jumlah pemakaian semua teknologi. Visualisasi dilakukan dengan menjalankan Kode~\ref{kode:vismob}. Kode tersebut membuat visualisasi dari data yang telah dibuat menjadi pivot tabel. Kode tersebut juga membuat visualisasi ke dalam bentuk HTML.
+Setelah menemukan sepuluh teknologi yang paling banyak digunakan pada \textit{client} \mobile hal yang selanjutnya dilakukan adalah melakukan visualisasi. Visualisasi ini dilakukan dengan cara yang sama seperti pada Bagian~\ref{subsub: 10semua}, yaitu memvisualisasikan data berdasarkan jumlah penggunaan, lalu  memvisualisasikan data berdasarkan persentase penggunaan nya. Visualisasi dilakukan dengan menjalankan Kode~\ref{kode:vismob}. Kode tersebut membuat visualisasi dari data yang telah dibuat menjadi pivot tabel. Kode tersebut juga membuat visualisasi ke dalam bentuk HTML.
 
 \begin{lstlisting}[language = Python,caption=Kode untuk membuat visualisasi pada \textit{client} \mobile,label=kode:vismob]
 
@@ -161,7 +171,7 @@ Setelah menemukan sepuluh teknologi yang paling banyak digunakan pada \textit{cl
     
 \end{lstlisting}
 
-Hasil visualisasi dapat dilihat pada Gambar~\ref{fig:10mobile}. Hasil visualisasinya memperlihatkan hal yang hampir sama seperti pada Bagian~\ref{subsub: 10semua}. Semua teknologi mengalami penurunan penggunaan pada 1 Agustus 2024 dan penggunaan semua teknologi terlihat stabil.
+Hasil visualisasi unutk data yang menggunakan jumlah penggunaan teknologi dapat dilihat pada Gambar~\ref{fig:10mobile}. Hasil visualisasinya memperlihatkan hal yang hampir sama seperti pada Bagian~\ref{subsub: 10semua}. Semua teknologi mengalami penurunan penggunaan pada 1 Agustus 2024 dan penggunaan semua teknologi terlihat stabil.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\linewidth]{Gambar/perkembangan 10 teknologi mobile.png}
@@ -169,12 +179,29 @@ Hasil visualisasi dapat dilihat pada Gambar~\ref{fig:10mobile}. Hasil visualisas
     \label{fig:10mobile}
 \end{figure}
 
+Hasil visualisasi untuk data berdasarkan persentasepenggunaan dapat dilihat pada Gambar~\ref{fig:persentmobile}. Hasilnya menunjukan untuk semua teknologi adanya kenaikan persentase penggunaan pada bulan Agustus 2024. Hal ini dikarenakan total jumlah penggunaan teknologi pembuatan \web di bulan tersebut merupakan yang paling kecil.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\linewidth]{Gambar/perkembangan persentase mobile.png}
+    \caption{Perkembangan persentase penggunaan sepuluh teknologi populer pada \textit{client} \mobile}
+    \label{fig:persentmobile}
+\end{figure}
+
 \subsubsection{Perkembangan Sepuluh Teknologi pada \textit{Client} \desktop}
 
-Metode yang dilakukan untuk melihat perkembangan sepuluh teknologi yang paling banyak digunakan untuk \textit{client} \desktop sama seperti pada Bagian~\ref{subsub:10mobile} yaitu memisahkan data yang memiliki \textit{client} \desktop terlebih dahulu kemudian melakukan pengolahan sehingga mendapatkan hasil visualisasi yang diinginkan. Jumlah penggunaan untuk setiap teknologi yang populer juga dibagi dengan jumlah penggunaan semua teknologi. Hasil visualisasi dapat dilihat pada Gambar~\ref{fig:10dekstop}. Pada \textit{client} \desktop penggunaan teknologi PHP tidak sebanyak pada perangkat \mobile. Kemudian pada tanggal 1 Agustus 2024 juga semua teknologi mengalami penurunan penggunaan. Namun untuk \textit{client} \desktop penggunaan semua teknologi tidak langsung mengalami kenaikan di bulan september namun baru meningkat kembali di bilan Oktober.
+Metode yang dilakukan untuk melihat perkembangan sepuluh teknologi yang paling banyak digunakan untuk \textit{client} \desktop sama seperti pada Bagian~\ref{subsub:10mobile} yaitu memisahkan data yang memiliki \textit{client} \desktop terlebih dahulu kemudian melakukan pengolahan sehingga mendapatkan hasil visualisasi yang diinginkan. Visualisasi yang dilakukan didasarkan pada dua hal yaitu jumlah penggunaan teknologi dan persentase penggunaan teknologi. Hasil visualisasi berdasarkan jumlah penggunaan nya dapat dilihat pada Gambar~\ref{fig:10dekstop}. Pada \textit{client} \desktop penggunaan teknologi PHP tidak sebanyak pada perangkat \mobile. Kemudian pada tanggal 1 Agustus 2024 juga semua teknologi mengalami penurunan penggunaan. Namun untuk \textit{client} \desktop penggunaan semua teknologi tidak langsung mengalami kenaikan di bulan september namun baru meningkat kembali di bulan Oktober.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\linewidth]{Gambar/Perkembangan 10 teknologi pada desktop.png}
     \caption{Perkembangan sepuluh teknologi yang populer untuk \textit{client} \desktop}
     \label{fig:10dekstop}
+\end{figure}
+
+Hasil visualisasi untuk persentase penggunaan pada \textit{client} \desktop dapat dilihat pada Gambar~\ref{fig:persentasedesktop}. Hasil nya menunjukan bahwa adanya kenaikan persentase penggunaan teknologi popule pada bulan Agustus 2024. Hal ini dikarenakan jumlah penggunaan total pada bulan Agustus nilai nya paling rendah dibandingkan dengan bulan yang lain sehingga persentase untuk semua teknologi akan naik.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{Gambar/Perkembangan persentase pada desktop.png}
+    \caption{Perkembangan persentase penggunaan sepuluh teknologi populer pada \textit{client} \desktop}
+    \label{fig:persentasedesktop}
 \end{figure}
